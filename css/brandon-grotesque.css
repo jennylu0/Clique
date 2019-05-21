@@ -1,0 +1,99 @@
+/* --------- BRANDON GROTESQUE --------- */
+/* Thin */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_thin.otf') format('opentype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+/* Thin italic */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_thin_it.otf') format('opentype');
+	font-weight: 200;
+	font-style: italic;
+}
+
+/* Light */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_light.otf') format('opentype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+/* Light italic */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_light_it.otf') format('opentype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Regular */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_reg.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Regular italic */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_reg_it.otf') format('opentype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+/* Medium */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_med.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+/* Medium italic */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_med_it.otf') format('opentype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+/* Bold */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_bld.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* Bold italic */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_bld_it.otf') format('opentype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* Black */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_blk.otf') format('opentype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+/* Black italic */
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url('../fonts/Brandon_blk_it.otf') format('opentype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+
+
