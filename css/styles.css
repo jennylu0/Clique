@@ -1,0 +1,341 @@
+/* ============================ */
+/* TABLE OF CONTENTS */
+/* ============================ */
+
+/*
+0.1 BASICS
+0.2 TYPOGRAPHY 
+0.3 UTILITIES
+0.4 ELEMENTS
+*/
+
+
+/* =========== BASICS =========== */
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: 'Crimson Text', serif;
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+
+::selection {
+	background-color: #f88601;
+	color: #ffffff;
+}
+
+::-moz-selection {
+	background-color: #f88601;
+	color: #ffffff;
+}
+
+.container {
+	max-width: 980px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+section {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+/* =========== TYPOGRAPHY =========== */
+
+h1 {
+	font-family: 'Brandon Grotesque', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 5rem;
+	letter-spacing: 4px;
+	margin-bottom: 3rem;
+	margin-top: 2rem;
+}
+
+h2 {
+	font-size: 2.5rem;
+}
+
+h3 {
+	font-family: 'Brandon Grotesque', sans-serif;
+	font-weight: bold;
+	/*color: #f88601;*/
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	letter-spacing: 3px;
+}
+
+/* =========== UTILITIES =========== */
+
+.text-orange {
+	color: #f88601!important;
+}
+
+.c-btn,
+.c-btn--alt {
+	background-color: #f88601;
+	color: #ffffff;
+	font-family: 'Brandon Grotesque', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	border-radius: 3px;
+	padding: .5rem 1.25rem;
+	letter-spacing: 2px;
+	transition: .2s ease all;
+	display: inline-block;
+}
+
+.c-btn {
+	border: 2px solid #f88601;
+}
+
+.c-btn:hover {
+	color: #f88601;
+	background-color: #ffffff;
+	text-decoration: none;
+}
+
+.c-btn--alt {
+	background-color: rgba(0,0,0,.8);
+	font-family: 'Crimson Text', serif;
+	font-weight: normal;
+	padding: .8rem 1.5rem;
+}
+
+/* =========== ELEMENTS =========== */
+
+/* ---------- Menu ---------- */ 
+
+.c-logo-container {
+	background-color: #f88601;
+	padding: 3.5rem 1em;
+}
+
+.c-logo {
+	max-width: 7.5rem;
+}
+
+.navbar {
+	padding: 0 2rem 0 0;
+	font-family: 'Brandon Grotesque', sans-serif;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 1.3rem;
+}
+
+.navbar-nav {
+	flex-grow: 1;
+}
+
+.nav-link,
+.nav-link:hover {
+	color: #ffffff;
+}
+
+.navbar-expand .navbar-nav .nav-link {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.nav-item {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.nav-item.active .nav-link {
+	border-bottom: 3px solid #f88601;
+	padding-bottom: 1.5rem;
+}
+
+/* ---------- Main Menu ---------- */ 
+
+#masthead {
+	min-height: 100vh;
+	background-color: black;
+	margin-top: 0;
+	color: #ffffff;
+	position: relative;
+}
+
+
+#masthead h1 {
+	font-size: 13vw;
+	line-height: 110%;
+}
+
+.accent-container {
+    position: absolute;
+    top: 90%;
+    right: 10%;
+    max-width: 16vw;
+}
+
+.accent {
+
+}
+
+/* ---------- Side Menu ---------- */ 
+
+.sidenav {
+	position: fixed;
+    left: 0;
+    top: calc(50% + 5rem);
+    transform: translateY(-50%);
+    font-style: italic;
+    font-size: 1.8rem;
+    z-index: 10;
+}
+
+.sidenav-nav {
+	list-style-type: none;
+	position: relative;
+	padding-left: 0;
+}
+
+.sidenav-nav li {
+	position: relative;
+	padding-left: 5rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.sidenav-nav li a {
+	color: black;
+}
+
+.sidenav-nav li.active:before {
+	content: '';
+	border-bottom: 2px solid #f88601;
+	position: absolute;
+	top: 50%;
+	left: -2.5rem;
+	width: 100%;
+}
+
+/* ---------- Case studies ---------- */ 
+
+#cs-global {
+	background-image: url('../images/grey-bg-right.png');
+	background-size: 45%;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+.thumb-global {
+	margin-left: -15px;
+}
+
+.view-cs {
+	padding-right: 0;
+}
+
+.view-cs__btn {
+	font-family: 'Brandon Grotesque', sans-serif;
+	font-weight: bold;
+	color: #f88601;
+	text-transform: uppercase;
+	font-size: 1.8rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg) translateX(100%);
+    transform-origin: 100% 100%;
+}
+
+.view-cs__btn:hover {
+	color: #f88601;
+}
+
+
+/* ---------- Launches ---------- */ 
+
+.launch {
+	position: relative;
+	width: 25%;
+	background-position: center center;
+	background-image: url('../images/bg-signal.png');
+	margin: .3rem;
+	background-size: 120%;
+	transition: .2s ease all;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.launch:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.launch:hover {
+	background-size: 100%;
+	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+}
+
+.launch__logo {
+	width: 70%;
+}
+
+.launch-content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#launch-signal {
+	/*background-image: url('../images/bg-signal.png');*/
+}
+
+#launches .container {
+	max-width: 1200px;
+	width: 90%;
+}
+
+
+/* ---------- Footer ---------- */ 
+
+footer {
+	color: #767676;
+	font-family: 'Brandon Grotesque', sans-serif;
+	font-size: 1.2rem;
+	padding-bottom: 5rem;
+}
+
+footer .container {
+	max-width: 1200px;
+	width: 90%;
+}
+
+.footer-copyright span {
+	margin-right: 1.5rem;
+}
+
+.footer-copyright i {
+	margin-right: .5rem;
+	color: #cdcdcd;
+}
+
+.footer-social span {
+	background-color: #767676;
+	padding: .4rem .6rem;
+	border-radius: 100%;
+	margin-right: 1.5rem;
+}
+
+.footer-social i {
+	color: #ffffff;
+	font-size: .9em;
+}
