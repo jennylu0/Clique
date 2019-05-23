@@ -14,6 +14,8 @@
 
 html {
 	font-size: 10px;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {
@@ -32,6 +34,11 @@ body {
 	color: #ffffff;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
+/* ---------- Containers ---------- */ 
 .container {
 	max-width: 980px;
 	width: 80%;
@@ -39,13 +46,15 @@ body {
 	margin-right: auto;
 }
 
-a:hover {
-	text-decoration: none;
-}
-
 section {
 	margin-top: 5rem;
 	margin-bottom: 5rem;
+	position: relative;
+}
+
+.cs {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 }
 
 /* =========== TYPOGRAPHY =========== */
@@ -80,7 +89,8 @@ h3 {
 }
 
 .c-btn,
-.c-btn--alt {
+.c-btn--alt,
+.c-btn--invert {
 	background-color: #f88601;
 	color: #ffffff;
 	font-family: 'Brandon Grotesque', sans-serif;
@@ -111,19 +121,32 @@ h3 {
 	padding: .8rem 1.5rem;
 }
 
+.c-btn--invert {
+	background-color: transparent;
+	border: 2px solid #f88601;
+	color: #f88601;
+}
+
+.c-btn--invert:hover {
+	color: #f88601;
+}
+
 /* =========== ELEMENTS =========== */
 
 /* ---------- Menu ---------- */ 
 
+/* Logo */
 .c-logo-container {
 	background-color: #f88601;
 	padding: 3.5rem 1em;
+	z-index: 10;
 }
 
 .c-logo {
 	max-width: 7.5rem;
 }
 
+/* Nav */
 .navbar {
 	padding: 0 2rem 0 0;
 	font-family: 'Brandon Grotesque', sans-serif;
@@ -134,7 +157,15 @@ h3 {
 
 .navbar-nav {
 	flex-grow: 1;
+	transition: .5s ease all;
+	position: relative;
+	right: 0;
 }
+
+.navbar-nav.slide {
+	right: 100%;
+	transition: .5s ease all;
+}	
 
 .nav-link,
 .nav-link:hover {
@@ -156,7 +187,7 @@ h3 {
 	padding-bottom: 1.5rem;
 }
 
-/* ---------- Main Menu ---------- */ 
+/* ---------- Masthead ---------- */ 
 
 #masthead {
 	min-height: 100vh;
@@ -172,27 +203,69 @@ h3 {
 	line-height: 110%;
 }
 
+/* ---------- Rectangle accents ---------- */ 
+
 .accent-container {
-    position: absolute;
-    top: 90%;
-    right: 10%;
-    max-width: 16vw;
+	position: absolute;
+	max-width: 16vw;
 }
 
-.accent {
+.accent-container-global {
+    top: 90%;
+    right: 10%;
+}
 
+.accent-container-funny {
+    top: 85%;
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.accent-container-elevated {
+    top: 85%;
+    left: 0;
+    transform: translateX(-60%);
+}
+
+.accent-container-prostegious {
+	top: 90%;
+	left: 50%;
+}
+
+.accent-container-hopeful {
+    top: 50%;
+    left: 0;
+    transform: translateX(-65%);
+}
+
+.accent-container-different {
+    top: 90%;
+    right: -5%;
+}
+
+.accent-container-footer {
+	right: 5%;
+    bottom: 0;
+    transform: translateY(70%);
 }
 
 /* ---------- Side Menu ---------- */ 
 
 .sidenav {
-	position: fixed;
+	position: absolute;
+	top: calc(100% + 7rem);
     left: 0;
-    top: calc(50% + 5rem);
-    transform: translateY(-50%);
     font-style: italic;
     font-size: 1.8rem;
     z-index: 10;
+    /*transition: .3s ease top;*/
+}
+
+.sidenav.active {
+	position: fixed;
+	top: calc(50% - 4rem);
+    transform: translateY(-50%);
+    /*transition: .3s ease top;*/
 }
 
 .sidenav-nav {
@@ -223,22 +296,44 @@ h3 {
 
 /* ---------- Case studies ---------- */ 
 
-#cs-global {
+.cs-left {
 	background-image: url('../images/grey-bg-right.png');
 	background-size: 45%;
 	background-repeat: no-repeat;
 	background-position: right top;
 }
 
-.thumb-global {
-	margin-left: -15px;
+.cs-right {
+	background-image: url('../images/grey-bg-left.png');
+	background-size: 45%;
+	background-repeat: no-repeat;
+	background-position: left top;
 }
 
-.view-cs {
+.thumb-left {
+	margin-left: -15px;
+	box-shadow: 0 0 20px 1px rgba(0,0,0,.1);
+}
+
+.thumb-global {
+	box-shadow: none;
+}
+
+.cs-left .view-cs {
 	padding-right: 0;
 }
 
-.view-cs__btn {
+.cs-right .view-cs {
+	padding-right: 0;
+}
+
+.thumb-right {
+	margin-right: -15px;
+	box-shadow: 0 0 20px 1px rgba(0,0,0,.1);
+}
+
+.cs-left .view-cs__btn,
+.cs-right .view-cs__btn {
 	font-family: 'Brandon Grotesque', sans-serif;
 	font-weight: bold;
 	color: #f88601;
@@ -251,6 +346,13 @@ h3 {
     transform-origin: 100% 100%;
 }
 
+.cs-right .view-cs__btn {
+	left: 0;
+    right: auto;
+    transform: translateX(-100%) rotate(-90deg);
+}
+
+
 .view-cs__btn:hover {
 	color: #f88601;
 }
@@ -260,14 +362,13 @@ h3 {
 
 .launch {
 	position: relative;
-	width: 25%;
 	background-position: center center;
-	background-image: url('../images/bg-signal.png');
 	margin: .3rem;
 	background-size: 120%;
 	transition: .2s ease all;
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+	filter: grayscale(100%);
+	flex-basis: calc(25% - .6rem);
 }
 
 .launch:after {
@@ -283,20 +384,67 @@ h3 {
 }
 
 .launch__logo {
-	width: 70%;
+	max-height: 60px;
 }
 
 .launch-content {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	top: 0;
+	left: 0;
+	padding: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 #launch-signal {
-	/*background-image: url('../images/bg-signal.png');*/
+	background-image: url('../images/bg-signal.png');
+}
+
+#launch-urbanbelly {
+	background-image: url('../images/bg-urbanbelly.png');
+}
+
+#launch-j {
+	background-image: url('../images/bg-j.png');
+}
+
+#launch-aoa {
+	background-image: url('../images/bg-aoa.png');
+}
+
+#launch-lbp {
+	background-image: url('../images/bg-lbp.png');
+}
+
+#launch-adler {
+	background-image: url('../images/bg-adler.png');
+}
+
+#launch-hinsdale {
+	background-image: url('../images/bg-hinsdale.png');
+}
+
+#launch-smith {
+	background-image: url('../images/bg-smith.png');
+}
+
+#launch-riverline {
+	background-image: url('../images/bg-riverline.png');
+}
+
+#launch-venturesummit {
+	background-image: url('../images/bg-venturesummit.png');
+}
+
+#launch-immediatecare {
+	background-image: url('../images/bg-immediatecare.png');
+}
+
+#launch-goshena {
+	background-image: url('../images/bg-goshena.png');
 }
 
 #launches .container {
@@ -335,7 +483,56 @@ footer .container {
 	margin-right: 1.5rem;
 }
 
+.footer-social span.fb {
+	background-color: #3b5a97;
+}
+
+.footer-social span.insta {
+	background-color: #135688;
+}
+
+.footer-social span.yt {
+	background-color: #e14e42;
+}
+
+.footer-social span.fk {
+	background-color: #e1e1e1;
+}
+
+.footer-social span.tw {
+	background-color: #2aa9e0;
+}
+
+.footer-social span.li {
+	background-color: #028cb5;	
+}
+
 .footer-social i {
 	color: #ffffff;
 	font-size: .9em;
 }
+
+/* ---------- Signoff ---------- */ 
+
+#signoff {
+	background-color: #000;
+	color: #fff;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	margin-bottom: 0;
+	min-height: 30vw;
+	overflow: hidden;
+}
+
+#signoff h2 {
+	font-size: 4rem;
+	margin-top: 0;
+}
+
+#signoff .c-btn--invert {
+	font-size: 1.5rem;
+	padding: 1.2rem 2.5rem;
+	margin: 0 1.5rem;
+}
+
+
